@@ -38,11 +38,56 @@
 </head>
 
 <body>
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url('/') }}">HRM System</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
 
-    <div class="container">
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('profile.show') }}">
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
 
         <!-- Welcome Section -->
-        <div class="text-center mb-5">
+        <div class="text-center pt-5">
             <h1>Welcome to the Simplified HRM System</h1>
             <p class="lead">Manage Employees, Departments, and Skills efficiently in one place.</p>
             <a href="{{ route('dashboard') }}" class="btn btn-primary">Go to Dashboard</a>
@@ -206,7 +251,7 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+    <footer class="bg-dark text-white p-5 text-center">
         <div class="container">
             <p>&copy; {{ date('Y') }} HRM System. All Rights Reserved.</p>
             <p>Designed and maintained by Ahsan</p>
