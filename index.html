@@ -19,6 +19,7 @@
             width: 100%;
             height: auto;
             max-height: 400px;
+            /* prevents extremely tall images from breaking the layout */
             object-fit: contain;
             border-radius: 5px;
             margin-bottom: 15px;
@@ -29,6 +30,7 @@
             vertical-align: middle;
         }
 
+        /* Optional: responsive smaller screens */
         @media (max-width: 576px) {
             .screenshot {
                 max-height: 250px;
@@ -85,6 +87,8 @@
             </tbody>
         </table>
 
+
+
         <!-- How it Works -->
         <div class="section-title">
             <h2>How It Works</h2>
@@ -100,7 +104,7 @@
         <div class="section-title">
             <h3>1. Dashboard Overview</h3>
         </div>
-        <img src="{{ asset('screenshot/dashboard.png') }}" alt="Dashboard Overview" class="screenshot">
+        <img src="public/screenshot/dashboard.png" alt="Dashboard Overview" class="screenshot">
         <p>
             The dashboard provides a quick overview of total Employees, Departments, and Skills. It serves as the
             starting point for navigating to any HRM management section.
@@ -110,7 +114,7 @@
         <div class="section-title">
             <h3>2. Adding a New Department</h3>
         </div>
-        <img src="{{ asset('screenshot/add_department.png') }}" alt="Add Department" class="screenshot">
+        <img src="public/screenshot/add_department.png" alt="Add Department" class="screenshot">
         <p>
             Go to Departments → Add Department → Enter the department name → Save. Departments organize your employees,
             making filtering and management easier.
@@ -120,7 +124,7 @@
         <div class="section-title">
             <h3>3. Adding a New Skill</h3>
         </div>
-        <img src="{{ asset('screenshot/skill.png') }}" alt="Add Skill" class="screenshot">
+        <img src="public/screenshot/skill.png" alt="Add Skill" class="screenshot">
         <p>
             Go to Skills → Add Skill → Enter the skill name → Save. Tracking employee skills helps in assigning projects
             and training.
@@ -130,7 +134,7 @@
         <div class="section-title">
             <h3>4. Adding a New Employee</h3>
         </div>
-        <img src="{{ asset('screenshot/add_emp.png') }}" alt="Add Employee" class="screenshot">
+        <img src="public/screenshot/add_emp.png" alt="Add Employee" class="screenshot">
         <p>
             Go to Employees → Add Employee → Fill in details → Select Department → Add Skills → Save. Centralizes
             employee data for easy management.
@@ -140,7 +144,7 @@
         <div class="section-title">
             <h3>5. Viewing Employee Details</h3>
         </div>
-        <img src="{{ asset('screenshot/list_emp.png') }}" alt="View Employee" class="screenshot">
+        <img src="public/screenshot/list_emp.png" alt="View Employee" class="screenshot">
         <p>
             View employee info, assigned department, and skills. Helps in performance tracking and project assignments.
         </p>
@@ -149,7 +153,7 @@
         <div class="section-title">
             <h3>6. Filtering Employees by Department</h3>
         </div>
-        <img src="{{ asset('screenshot/list_dept.png') }}" alt="Filter by Department" class="screenshot">
+        <img src="public/screenshot/list_dept.png" alt="Filter by Department" class="screenshot">
         <p>
             Use the department dropdown to filter employees dynamically. Makes it easier to manage departmental staff.
         </p>
@@ -158,7 +162,7 @@
         <div class="section-title">
             <h3>8. Security & Access Control</h3>
         </div>
-        <img src="{{ asset('screenshot/access.png') }}" alt="Access Control" class="screenshot">
+        <img src="public/screenshot/access.png" alt="Access Control" class="screenshot">
         <p>
             Admins/Developers have full access. Visitors have view-only access. Protects sensitive HR data and reduces
             errors.
