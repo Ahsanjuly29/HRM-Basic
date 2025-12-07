@@ -62,6 +62,10 @@
     <div class="sidebar">
         <h4 class="text-center py-3">HRM System</h4>
 
+        <a href="{{ route('/') }}">
+            <i class="fas fa-home mr-2"></i> Welcome
+        </a>
+
         <a href="{{ route('dashboard') }}">
             <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
         </a>

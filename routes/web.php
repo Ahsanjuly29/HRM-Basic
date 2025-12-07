@@ -19,7 +19,7 @@ require __DIR__ . '/auth.php';
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('/');
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['role:admin,developer,visitor'])->name('dashboard');
